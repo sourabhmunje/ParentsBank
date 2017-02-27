@@ -1,0 +1,40 @@
+﻿@model WebApplication1.Models.Eventbooking
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Eventbooking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cust.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cust.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.events.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.events.EventName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,95 @@
+﻿@model IEnumerable<WebApplication1.Models.Event>
+
+@{
+    ViewBag.Title = "List of Events";
+}
+
+<h2>Index</h2>
+
+
+<div>
+    @Html.ActionLink("Create", "Create")
+</div>
+
+<nav id="main-nav-wrap">
+    <ul class="main-navigation">
+
+       
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="current">@Html.ActionLink("Event", "Index", "Events")</li>
+                    <li>@Html.ActionLink("Customer", "Index", "customers")</li>
+                    <li>@Html.ActionLink("Search An Event", "Search", "Events")</li>
+                    <li>  @Html.Partial("_LoginPartial")</li>
+
+                    @*<li><a> @Html.ActionLink("Home", "Index", "Home")</a></li>
+                        <li><a>@Html.ActionLink("Process", "Index", "Home")</a></li>
+                        <li><a>@Html.ActionLink("Features", "Index", "Home")</a></li>
+                        <li><a>@Html.ActionLink("Pricing", "Index", "Home")</a></li>
+                        <li><a>@Html.ActionLink("FAQs", "Index", "Home")</a></li>*@
+
+        
+    </ul>
+
+
+</nav>
+
+
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apartment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cusine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeatsLeft)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Apartment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cusine)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SeatsLeft)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,168 @@
+﻿@model WebApplication1.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+    <h4>Event</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EventName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apartment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apartment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Zip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Zip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RatePerPerson)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RatePerPerson)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cusine)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cusine)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EventTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EventTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatsBooked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatsBooked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SeatsLeft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SeatsLeft)
+        </dd>
+
+    </dl >
+
+<p>
+    @Html.ActionLink("Back to List", "Search") |
+    @Html.ActionLink("Book", "Create", new { id = Model.ID })
+</p>
+
+@*<style>
+    #map {
+        height: 500px;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+    }
+</style>
+
+    <div id="map"> </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwgwDdunmsSnBIyZY-rcYi-ovkf1tmUnM&callback=initMap" async defer></script>
+    <script>
+    function initMap()
+    {
+        var map = new google.maps.Map(document.getElementById('map'));
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) 
+        {
+            navigator.geolocation.getCurrentPosition(function (position) 
+            {
+                var marker = new google.maps.Marker({ map: map, animation: google.maps.Animation.BOUNCE });
+                // var infoWindow = new google.maps.InfoWindow({map: map});
+                var pos =
+                {
+                    lat: @Model.LocationLat,
+                    lng: @Model.LocationLat
+                };
+
+                marker.setPosition(pos);
+                
+                // marker. setAnimation(BOUNCE);
+                marker.setTitle("Event!");
+                // marker.setClickable(!0);
+
+                // marker.setShape(circle);
+                // infoWindow.setPosition(pos);
+                // infoWindow.setContent('You are here!');
+                map.setCenter(pos);
+                map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+                map.setZoom(15);
+           },
+           function () 
+           {
+                            handleLocationError(true, infoWindow, map.getCenter());
+           });
+        }
+        else {
+
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+    </script>*@

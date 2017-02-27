@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste of Home</title>
+    <meta name="description" content="">
+    <meta name="author" content="">*@
+  
+    
+    @*@Scripts.Render("~/bundles/modernizr")*@
+    <!--- basic page needs
+    ================================================== -->
+    
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Taste of Home</title>
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="~/Content/base.css">
+    <link rel="stylesheet" href="~/Content/main.css">
+    <link rel="stylesheet" href="~/Content/vendor.css">
+    <link rel="stylesheet" href="~/Content/mainaffects.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="~/Scripts/modernizr.js"></script>
+
+    <!-- favicons
+     ================================================== -->
+    <link rel="icon" type="image/png" href="~/Resources/Logo_elephant.JPG">
+
+    @*@Styles.Render("~/Content/css")*@
+</head>
+<body>
+    @*<header>*@
+        @*<div class="row">
+
+            <div class="logo">
+                <a href="index.html">Taste of Home</a>
+            </div>
+
+            <nav id="main-nav-wrap">
+                <ul class="main-navigation">*@
+
+                    @*<li><a class="smoothscroll"> @Html.ActionLink("Home", "Index", "Home")</a></li>
+                    <li><a class="smoothscroll" href="#process" title=""> @Html.ActionLink( "Process", "Home")</a></li>
+                    <li><a class="smoothscroll">@Html.ActionLink("Features", "Index", "Home")</a></li>
+                    <li><a class="smoothscroll">@Html.ActionLink("Pricing", "Index", "Home")</a></li>
+                    <li><a class="smoothscroll">@Html.ActionLink("FAQs", "Index", "Home")</a></li>*@
+                    
+                        @*<li class="current"><a class="smoothscroll" href="#intro" title="">Home</a></li>
+                        <li><a class="smoothscroll" href="#process" title="">Process</a></li>
+                        <li><a class="smoothscroll" href="#features" title="">Features</a></li>
+                        <li><a class="smoothscroll" href="#pricing" title="">Pricing</a></li>
+                        <li><a class="smoothscroll" href="#faq" title="">FAQ</a></li>*@
+
+                        @*<li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Event", "Index", "Events")</li>
+                        <li>@Html.ActionLink("Customer", "Index", "customers")</li>
+                        <li>@Html.ActionLink("Host An Event", "Index", "Hosts")</li>*@
+                        @* <li class="highlight with-sep"><a href=@Html.Partial("_LoginPartial")</a></li>*@
+                    @*</ul>
+            </nav>
+
+            <a class="menu-toggle" href="#"><span>Menu</span></a>
+
+        </div>
+
+    </header>*@
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li>@Html.ActionLink("Event", "Index", "Events")</li>
+                        <li>@Html.ActionLink("Customer", "Index", "customers")</li>
+                        <li>@Html.ActionLink("Host An Event", "Index", "Hosts")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+   
+        
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Rishikesh More, Raunak Tongia, Sourabh Munje</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

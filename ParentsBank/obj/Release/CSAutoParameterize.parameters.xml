@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=sql1.gtt.me;Database=db_2bd2783b373f4be6a6f7376d39d0601c;User Id=U_2bd2783b373f4be6a6f7376d39d0601c;Password=pwd_2bd2783b373f4be6a6f7376d39d0601c" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Flex1\\IS7012\ \(2168\)\ WEB\ DEV\ W\.NET\ \(001\)\\Project\\ParentsBank\\ParentsBank\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

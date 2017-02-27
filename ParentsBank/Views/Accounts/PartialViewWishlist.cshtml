@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ParentsBank.Models.Wishlist>
+
+<h2> Wishlists </h2>
+<p>
+    @Html.ActionLink("Create New", "Create", "Wishlists")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.owner)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateAdded)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            Purchasable
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Link)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purchase)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.owner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateAdded)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @if (item.purchasable==1)
+            {
+                <span class="glyphicon glyphicon-thumbs-up" aria-hidden="false"></span>
+            }
+            else
+            {
+                <span class="glyphicon glyphicon-thumbs-down" aria-hidden="false"></span>
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Link)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purchase)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", "Wishlists", new { id = item.ID }, new { }) |
+        
+         
+            @Html.ActionLink("Details", "Details", "Wishlists", new { id=item.ID }, new { }) |
+            @Html.ActionLink("Delete", "Delete", "Wishlists", new { id=item.ID }, new { })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,101 @@
+﻿@model ParentsBank.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Owner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Recipient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Recipient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpenDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpenDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Interest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Interest)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.InterestGenerated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterestGenerated)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompoundedAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompoundedAmount)
+        </dd>
+    </dl>
+</div>
+<div class="progress">
+
+    <div class="progress-bar progress-bar-success" style="width: @Model.PrincipalPercentage()%">
+        <span> Principal</span>    <span class="sr-only">@Model.PrincipalPercentage() Complete (success)</span>
+    </div>
+    <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: @Model.InterestPercentage()%">
+        <span>Interest Earned</span><span class="sr-only">@Model.InterestPercentage() Complete (warning)</span>
+    </div>
+
+</div>
+@if(Model.InterestGenerated>=10)
+{
+<div>
+    <h2 style="color:red">Congratulations, You have earned a lot of interest!!</h2>
+</div>
+}
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+    @{ 
+        Html.RenderAction("PartialViewTransaction", new { id = Model.Id }); }
+    @{ 
+        Html.RenderAction("PartialViewWishlist", new { id = Model.Id }); }
